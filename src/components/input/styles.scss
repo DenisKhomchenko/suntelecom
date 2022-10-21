@@ -1,0 +1,81 @@
+@import "@theme/vars.scss";
+
+.input{
+    position: relative;
+    box-sizing: border-box;
+    background: none;
+    border: none;
+    outline: none;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 300px;
+    font-family: 'HelveticaNeue';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    transition: padding 0.35s ease;
+
+    &--md{
+    }
+
+    &--md &__field{
+        height: 42px;
+        border-radius: 5px;
+        border: 0.5px solid rgba(3, 40, 56, 0.60);
+
+    }
+
+    &__field{
+        outline: none;
+        box-sizing: border-box;
+        width: 100%;
+        height: 54px;
+        padding: 0 15px;
+        background-color: #fff;
+        color: #262626;
+        border: 1px solid #AEBDCB;
+        border-radius: 10px;
+        transition: background-color 0.35s ease 0.1s, border-color 0.35s ease, color 0.35s ease;
+    }
+
+    &__error{
+        color: $red;
+        font-size: 12px;
+        line-height: 14px;
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        max-width: 100%;
+        transition: transform 0.35s ease, opacity 0.35s ease, visiblity 0.35s ease;
+    }
+
+    &::placeholder{
+        color: #8B9BA7;
+        opacity: 0.5;
+    }
+
+    &.is-error{
+        padding-bottom: 20px;
+    }
+
+    &.is-error &__field{
+        border-color: $red;
+    }
+
+    &.is-error &__error{
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &.is-filled &__field{
+        border-color: $gold;
+    }
+
+	// &.is-focus{
+	// 	border-color: $blue-white;
+	// }
+
+}

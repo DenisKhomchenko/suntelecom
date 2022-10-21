@@ -1,0 +1,67 @@
+@import "@theme/vars.scss";
+
+.ui{
+    padding: 60px 0;
+    // background-color: $dark;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    &__inner{
+
+    }
+
+    &__block{
+        border-bottom: 1px solid $gold;
+        padding: 30px 0;
+    }
+
+    &__row{
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -20px -10px;
+    }
+
+    &__col{
+        max-width: 100%;
+        flex-grow: 1;
+        padding: 0 20px;
+        margin-bottom: 20px;
+    }
+}
+
+
+
+
+
+
+.slider {
+
+    &__inner {
+    }
+
+    &__wrapper {
+    }
+
+    &__slide {
+    }
+
+    &__navigation {
+    }
+
+    &__button {
+    }
+
+    &__button--prev {
+    }
+
+    &__button-icon {
+    }
+
+    &__button--next {
+    }
+
+    &__pagination {
+    }
+}

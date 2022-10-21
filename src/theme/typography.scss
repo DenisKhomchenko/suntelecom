@@ -1,0 +1,149 @@
+@import '@theme/vars.scss';
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+    padding: 0;
+}
+
+p{
+    font-family: 'HelveticaNeue';
+    font-weight: 400;
+}
+
+
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    text-transform: uppercase;
+    font-family: 'Ermilov';
+    font-weight: 700;
+}
+
+.h1{
+    font-size: 40px;
+    line-height: 110%;
+}
+
+.h2{
+    font-size: 45px;
+    line-height: 55px;
+
+    @media only screen and (max-width: $bp-lg) {
+        font-size: 35px;
+        line-height: 110%;
+    }
+
+    @media only screen and (max-width: $bp-md) {
+        font-size: 25px;
+        line-height: 31px;
+    }
+}
+
+.h3{
+    font-size: 35px;
+    line-height: 43px;
+
+    @media only screen and (max-width: $bp-lg) {
+        font-size: 30px;
+        line-height: 110%;
+    }
+
+    @media only screen and (max-width: $bp-md) {
+        font-size: 24px;
+        line-height: 29px;
+    }
+}
+
+.h4{
+    font-size: 25px;
+    line-height: 31px;
+
+    @media only screen and (max-width: $bp-lg) {
+        font-size: 22px;
+        line-height: 27px;
+    }
+
+    @media only screen and (max-width: $bp-md) {
+        font-size: 20px;
+        line-height: 25px;
+    }
+}
+
+.h5{
+    font-size: 20px;
+    line-height: 135%;
+
+    @media only screen and (max-width: $bp-lg) {
+        font-size: 18px;
+    }
+
+    @media only screen and (max-width: $bp-md) {
+        font-size: 16px;
+    }
+}
+
+.text{
+    font-size: 16px;
+    line-height: 135%;
+
+    @media only screen and (max-width: $bp-md) {
+        font-size: 14px;
+    }
+
+    &-xl{
+        font-family: 'HelveticaNeue';
+        font-size: 20px;
+        line-height: 135%;
+    }
+
+    &-lg{
+        font-family: 'HelveticaNeue';
+        font-size: 18px;
+        line-height: 135%;
+    }
+
+    &-md{
+        font-family: 'HelveticaNeue';
+        font-size: 14px;
+        line-height: 135%;
+    }
+
+    &-sm{
+        font-family: 'HelveticaNeue';
+        font-size: 12px;
+        line-height: 140%;
+    }
+
+    //STYLE
+
+    &-border{
+        -webkit-text-stroke: 1px #8C8C8C;
+    }
+
+    //WEIGHT
+
+    &-regular{
+        font-weight: 400;
+    }
+    
+    &-medium{
+        font-weight: 500;
+    }
+
+    &-bold{
+        font-weight: 700;
+    }
+
+    //FAMILY
+
+
+    &-century{
+        font-family: 'CenturyGothic';
+    }
+
+    &-helvetica{
+        font-family: 'Ermilov';
+    }
+
+    &-neue{
+        font-family: 'Roboto';
+    }
+}

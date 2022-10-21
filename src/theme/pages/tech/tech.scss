@@ -1,0 +1,110 @@
+@import "@theme/vars.scss";
+
+@import "@theme-mixins/media.scss";
+
+// .tech {
+
+//   &__inner {
+//     padding: 64px 0 80px;
+
+//     @include media(from_m) {
+//       max-width: 834px;
+//       padding: 104px 0 144px;
+//     }
+
+//     @include media(from_l) {
+//       max-width: 1440px;
+//       padding: 120px 0 160px;
+//     }
+//   }
+
+//   &__container {
+//     width: 100%;
+//     max-width: 100%;
+//     box-sizing: border-box;
+//     padding: 0 20px;
+
+//     @include media(from_m) {
+//       padding: 0 40px;
+//     }
+
+//     @include media(from_l) {
+//       padding: 0 100px;
+//     }
+//   }
+  
+//   &__title {
+//     margin: 0 0 32px;
+//     font-size: 40px;
+
+//     @include media(from_m) {
+//       margin: 0 0 40px;
+//       font-size: 56px;
+//     }
+
+//     @include media(from_l) {
+//       margin: 0 0 48px;
+//       font-size: 72px;
+//     }
+//   }
+
+//   &__component-list {
+//     display: flex;
+//     flex-wrap: wrap;
+//     margin: -20px 0 0;
+
+//     @include media(from_m) {
+//       margin: -40px 0 0;
+//     }
+
+//     @include media(from_l) {
+//       margin: -48px 0 0;
+//     }
+//   }
+
+//   &__component {
+//     flex-basis: 100%;
+//     margin: 20px 0 0;
+
+//     @include media(from_m) {
+//       margin: 40px 0 0;
+//     }
+
+//     @include media(from_l) {
+//       margin: 48px 0 0;
+//     }
+//   }
+
+//   &__table {
+//     border-collapse: collapse;
+//     border: 1px solid #000;
+//   }
+
+//   &__table-row {
+//     display: flex;
+//     flex-direction: column;
+
+//     @include media(from_m) {
+//       display: table-row;
+//     }
+//   }
+
+//   &__table-cell {
+//     border: 1px solid #000;
+//     padding: 8px;
+
+//     @include media(from_m) {
+//       padding: 12px;
+//     }
+
+//     @include media(from_l) {
+//       padding: 16px;
+//     }
+//   }
+
+//   &__table-cell_head {
+//     text-transform: uppercase;
+//     font-weight: 700;
+//     background-color: #c4c4c4;
+//   }
+// }

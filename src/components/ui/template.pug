@@ -1,0 +1,327 @@
+mixin uiKit()
+    section.ui 
+        .container 
+            .ui__inner 
+                .ui__row
+                    .ui__col 
+                        .h2 UI KIT 
+
+                .ui__block 
+                    .ui__row
+                        .ui__col 
+                            .h3 Title
+                    
+                    .ui__row
+                        .ui__col 
+                            .h1 h1
+                    
+                    .ui__row
+                        .ui__col 
+                            .h2 h2
+                    
+                    .ui__row
+                        .ui__col 
+                            .h3 h3
+                    
+                    .ui__row
+                        .ui__col 
+                            .h4 h4
+                    
+                    .ui__row
+                        .ui__col 
+                            .h5 h5
+                
+                .ui__block 
+                    .ui__row
+                        .ui__col 
+                            .h3 Text 
+                    
+                    .ui__row
+                        .ui__col 
+                            .text text
+                    
+                    .ui__row
+                        .ui__col 
+                            .text-xl text-xl
+                    
+                    .ui__row
+                        .ui__col 
+                            .text-lg text-lg
+                    
+                    .ui__row
+                        .ui__col 
+                            .text-md text-md
+                    
+                    .ui__row
+                        .ui__col 
+                            .text-sm text-sm
+
+
+                .ui__block 
+                    .ui__row
+                        .ui__col 
+                            .h3 List 
+                    
+                    .ui__row
+                        .ui__col 
+                            ul.list 
+                                li.list__item 
+                                    p.text Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus quae soluta cum asperiores deserunt atque culpa quo, neque, ad blanditiis quos quod. Deserunt nulla natus tempore ducimus provident laborum exercitationem.
+                                li.list__item 
+                                    p.text Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus quae soluta cum asperiores deserunt atque culpa quo, neque, ad blanditiis quos quod. Deserunt nulla natus tempore ducimus provident laborum exercitationem.
+                                li.list__item 
+                                    p.text Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus quae soluta cum asperiores deserunt atque culpa quo, neque, ad blanditiis quos quod. Deserunt nulla natus tempore ducimus provident laborum exercitationem.
+                                
+
+                .ui__block
+                    .ui__row    
+                        .ui__col 
+                            .h3 Link 
+                    
+                    .ui__row 
+                        .ui__col 
+                            a.link(href="#") 
+                                span link
+                                svg.icon
+                                    use(xlink:href="#arrow--right")
+                        .ui__col 
+                            a.link.link--white(href="#") 
+                                span link white
+                                svg.icon
+                                    use(xlink:href="#arrow--right")
+                        .ui__col 
+                            a.link.link--gold(href="#") 
+                                span link gold
+                                svg.icon
+                                    use(xlink:href="#arrow--right")
+
+
+                .ui__block 
+                    .ui__row
+                        .ui__col 
+                            .h3 Button 
+                    
+                    .ui__row 
+                        .ui__col 
+                            a.button(href="#")
+                                span.button__text кнопка
+                                svg.icon.button__icon
+                                    use(xlink:href="#arrow-round--right")
+                        .ui__col 
+                            a.button.button--md(href="#")
+                                span.button__text кнопка
+                                svg.icon.button__icon
+                                    use(xlink:href="#arrow-round--down")
+                        .ui__col 
+                            a.button.button--sm(href="#")
+                                span.button__text кнопка
+                                svg.icon.button__icon
+                                    use(xlink:href="#arrow-round--right")
+                
+
+                .ui__block 
+                    .ui__row
+                        .ui__col 
+                            .h3 Badge 
+
+                    .ui__row 
+                        .ui__col 
+                            .badges 
+                                .badges__list 
+                                    label.badge
+                                        input.badge__input(type="radio" name="badge-1" checked)
+                                        .badge__wrapper 
+                                            span Для физических лиц
+
+                                    label.badge
+                                        input.badge__input(type="radio" name="badge-1")
+                                        .badge__wrapper 
+                                            span Для физических лиц
+                                            svg.icon
+                                                use(xlink:href="#arrow--right")
+                    .ui__row 
+                        .ui__col 
+                            .badges 
+                                .badges__list 
+                                    label.badge.badge--md
+                                        input.badge__input(type="radio" name="badge-2" checked)
+                                        .badge__wrapper 
+                                            span Для физических лиц
+
+                                    label.badge.badge--md
+                                        input.badge__input(type="radio" name="badge-2")
+                                        .badge__wrapper 
+                                            span Для физических лиц
+                                            svg.icon
+                                                use(xlink:href="#arrow--right")
+
+
+                .ui__block 
+                    .ui__row
+                        .ui__col 
+                            .h3 Tabs 
+    
+                    .ui__row 
+                        .ui__col.jsTabs
+                            .badges 
+                                .badges__list 
+                                    button.badge.jsTabLink.is-active(type="button")
+                                        .badge__wrapper 
+                                            span Для физических лиц
+                                            
+                                    button.badge.jsTabLink(type="button")
+                                        .badge__wrapper 
+                                            span Для физических лиц
+                                            svg.icon
+                                                use(xlink:href="#arrow--right")
+                    .ui__row 
+                        .ui__col.jsTabs
+                            .badges 
+                                .badges__list 
+                                    button.badge.badge--md.jsTabLink.is-active(type="button")
+                                        .badge__wrapper 
+                                            span Для физических лиц
+                                            
+                                    button.badge.badge--md.jsTabLink(type="button")
+                                        .badge__wrapper 
+                                            span Для физических лиц
+                                            svg.icon
+                                                use(xlink:href="#arrow--right")
+
+                .ui__block 
+                    .ui__row
+                        .ui__col 
+                            .h3 Input 
+    
+                    .ui__row 
+                        .ui__col 
+                            .input
+                                input.input__field.jsInput(type="text" placeholder="input")
+                                .input__error Обязательно для заполнения
+                        .ui__col 
+                            .input.is-filled
+                                input.input__field.jsInput(type="text" placeholder="input")
+                                .input__error Обязательно для заполнения
+                        .ui__col 
+                            .input.is-error
+                                input.input__field.jsInput.jsPhoneMask(type="text" placeholder="input")
+                                .input__error Обязательно для заполнения
+
+                    .ui__row 
+                        .ui__col 
+                            .input.input--md
+                                input.input__field.jsInput(type="text" placeholder="input")
+                                .input__error Обязательно для заполнения
+                        .ui__col 
+                            .input.input--md.is-filled
+                                input.input__field.jsInput(type="text" placeholder="input")
+                                .input__error Обязательно для заполнения
+                        .ui__col 
+                            .input.input--md.is-error
+                                input.input__field.jsInput.jsPhoneMask(type="text" placeholder="input")
+                                .input__error Обязательно для заполнения
+
+
+                .ui__block 
+                    .ui__row
+                        .ui__col 
+                            .h3 Select 
+    
+                    .ui__row 
+                        .ui__col 
+                            select.select.jsSelect(name="select")
+                                option(value="1") 
+                                option(value="1") 
+                                option(value="1")
+
+
+                .ui__block 
+                    .ui__row
+                        .ui__col 
+                            .h3 Checkbox
+
+                    .ui__row 
+                        .ui__col 
+                            label.checkbox
+                                input.checkbox__input(type="checkbox" name="checkbox-1" checked)
+                                .checkbox__wrapper 
+                                    .checkbox__icon-wrapper 
+                                        svg.icon.checkbox__icon
+                                            use(xlink:href="#checkbox")
+                                    .checkbox__content 
+                                        .text checkbok
+
+
+                        .ui__col 
+                            label.checkbox
+                                input.checkbox__input(type="checkbox" name="checkbox-1")
+                                .checkbox__wrapper 
+                                    .checkbox__icon-wrapper 
+                                        svg.icon.checkbox__icon
+                                            use(xlink:href="#checkbox")
+                                    .checkbox__content 
+                                        .text checkbok
+
+
+                .ui__block 
+                    .ui__row
+                        .ui__col 
+                            .h3 Radio
+                             
+                    .ui__row 
+                        .ui__col 
+                            label.radio
+                                input.radio__input(type="radio" name="radio-1" checked)
+                                .radio__wrapper 
+                                    .radio__icon-wrapper 
+                                        .radio__icon
+                                    .radio__content 
+                                        .text radio 
+                        .ui__col 
+                            label.radio
+                                input.radio__input(type="radio" name="radio-1")
+                                .radio__wrapper 
+                                    .radio__icon-wrapper 
+                                        .radio__icon
+                                    .radio__content 
+                                        .text radio
+                
+                
+                .ui__block 
+                    .ui__row
+                        .ui__col 
+                            .h3 Breadcrumbs
+                             
+                    .ui__row 
+                        .ui__col 
+                            .breadcrumbs
+                                .container 
+                                    .breadcrumbs__list 
+                                        a.text-sm.breadcrumbs__link(href="#") Главная
+                                        a.text-sm.breadcrumbs__link(href="#") Услуги
+                                        a.text-sm.breadcrumbs__link(href="#") Интернет
+                
+                .ui__block 
+                    .ui__row
+                        .ui__col 
+                            .h3 Slider
+                             
+                    .ui__row 
+                        .ui__col
+                            .slider.jsSlider
+                                .swiper.slider__inner
+                                    .swiper-wrapper.slider__wrapper
+                                        .swiper-slide.slider__slide
+                                            p.text-lg Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius fugiat, suscipit magnam illum nisi architecto quo dolores ad. Saepe incidunt vitae commodi voluptate repudiandae quaerat laboriosam aliquam temporibus soluta hic?
+                                            
+                                        .swiper-slide.slider__slide
+                                            p.text-lg Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius fugiat, suscipit magnam illum nisi architecto quo dolores ad. Saepe incidunt vitae commodi voluptate repudiandae quaerat laboriosam aliquam temporibus soluta hic?
+                                            
+                                    .slider__navigation
+                                        .swiper-button-prev.slider__button.slider__button--prev
+                                            svg.icon.slider__button-icon
+                                                use(xlink:href="#arrow--left")
+                                        .swiper-button-next.slider__button.slider__button--next
+                                            svg.icon.slider__button-icon
+                                                use(xlink:href="#arrow--right")
+                                .swiper-pagination.slider__pagination

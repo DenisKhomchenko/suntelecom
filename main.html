@@ -190,7 +190,7 @@
                         type="submit"><span class="button__text">Проверить адрес</span><svg class="icon button__icon">
                           <use xlink:href="#arrow-round--right"></use>
                         </svg></button>
-                      <div class="status-label jsStatusPanel form-block__status is-loading">
+                      <div class="status-label jsStatusPanel form-block__status is-loading is-ok is-error">
                         <div class="status-label__wrapper status-label__wrapper--loading"><svg
                             class="icon status-label__icon">
                             <use xlink:href="#status-loading"></use>
@@ -243,11 +243,11 @@
               <div class="section-special__form">
                 <form action="#">
                   <div class="input input--md section-special__input"> <input class="input__field jsInput jsInputReq"
-                      type="text" placeholder="Как вас зовут?" />
+                      type="text" name="name" placeholder="Как вас зовут?" />
                     <div class="input__error">Обязательно для заполнения</div>
                   </div>
                   <div class="input input--md section-special__input"> <input
-                      class="input__field jsInput jsPhoneMask jsInputReq" type="text"
+                      class="input__field jsInput jsPhoneMask jsInputReq" type="text" name="phone"
                       placeholder="+7(___) ___ - __ - __" />
                     <div class="input__error">Обязательно для заполнения</div>
                   </div><button class="button section-special__button" type="submit"><span

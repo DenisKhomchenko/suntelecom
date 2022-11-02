@@ -273,11 +273,11 @@
                       <div class="swiper slider__inner">
                         <div class="swiper-wrapper slider__wrapper">
                           <div class="swiper-slide slider__slide"><label class="badge"><input class="badge__input"
-                                type="radio" name="badges" value="badge-0" checked="checked" />
+                                type="radio" name="badges-1" value="badge-0" checked="checked" />
                               <div class="badge__wrapper"> <span>Для физических лиц</span></div>
                             </label></div>
                           <div class="swiper-slide slider__slide"><label class="badge"><input class="badge__input"
-                                type="radio" name="badges" value="badge-1" />
+                                type="radio" name="badges-1" value="badge-1" />
                               <div class="badge__wrapper"> <span>Для физических лиц</span></div>
                             </label></div>
                         </div>
@@ -293,11 +293,11 @@
                       <div class="swiper slider__inner">
                         <div class="swiper-wrapper slider__wrapper">
                           <div class="swiper-slide slider__slide"><label class="badge badge--md"><input
-                                class="badge__input" type="radio" name="badges" value="badge-0" checked="checked" />
+                                class="badge__input" type="radio" name="badges-2" value="badge-0" />
                               <div class="badge__wrapper"> <span>Для физических лиц</span></div>
                             </label></div>
                           <div class="swiper-slide slider__slide"><label class="badge badge--md"><input
-                                class="badge__input" type="radio" name="badges" value="badge-1" />
+                                class="badge__input" type="radio" name="badges-2" value="badge-1" checked="checked" />
                               <div class="badge__wrapper"> <span>Для физических лиц</span></div>
                             </label></div>
                         </div>
@@ -338,11 +338,11 @@
                     <div class="slider badges__list jsSliderBadges">
                       <div class="swiper slider__inner">
                         <div class="swiper-wrapper slider__wrapper">
-                          <div class="swiper-slide slider__slide"><button class="badge badge--md jsTabLink is-active"
+                          <div class="swiper-slide slider__slide"><button class="badge badge--md jsTabLink"
                               type="button">
                               <div class="badge__wrapper"> <span>Для физических лиц</span></div>
                             </button></div>
-                          <div class="swiper-slide slider__slide"><button class="badge badge--md jsTabLink"
+                          <div class="swiper-slide slider__slide"><button class="badge badge--md jsTabLink is-active"
                               type="button">
                               <div class="badge__wrapper"> <span>Для физических лиц</span></div>
                             </button></div>
@@ -361,17 +361,18 @@
               </div>
               <div class="ui__row">
                 <div class="ui__col">
-                  <div class="input"><input class="input__field jsInput" type="text" placeholder="input">
+                  <div class="input"><input class="input__field jsInput" type="text" name="input" placeholder="input">
                     <div class="input__error">Обязательно для заполнения</div>
                   </div>
                 </div>
                 <div class="ui__col">
-                  <div class="input is-filled"><input class="input__field jsInput" type="text" placeholder="input">
+                  <div class="input is-filled"><input class="input__field jsInput" type="text" name="input"
+                      placeholder="input">
                     <div class="input__error">Обязательно для заполнения</div>
                   </div>
                 </div>
                 <div class="ui__col">
-                  <div class="input is-error"><input class="input__field jsInput jsPhoneMask" type="text"
+                  <div class="input is-error"><input class="input__field jsInput jsPhoneMask" type="text" name="input"
                       placeholder="input">
                     <div class="input__error">Обязательно для заполнения</div>
                   </div>
@@ -379,19 +380,20 @@
               </div>
               <div class="ui__row">
                 <div class="ui__col">
-                  <div class="input input--md"><input class="input__field jsInput" type="text" placeholder="input">
+                  <div class="input input--md"><input class="input__field jsInput" type="text" name="input"
+                      placeholder="input">
                     <div class="input__error">Обязательно для заполнения</div>
                   </div>
                 </div>
                 <div class="ui__col">
-                  <div class="input input--md is-filled"><input class="input__field jsInput" type="text"
+                  <div class="input input--md is-filled"><input class="input__field jsInput" type="text" name="input"
                       placeholder="input">
                     <div class="input__error">Обязательно для заполнения</div>
                   </div>
                 </div>
                 <div class="ui__col">
                   <div class="input input--md is-error"><input class="input__field jsInput jsPhoneMask" type="text"
-                      placeholder="input">
+                      name="input" placeholder="input">
                     <div class="input__error">Обязательно для заполнения</div>
                   </div>
                 </div>
@@ -421,24 +423,52 @@
               </div>
               <div class="ui__row">
                 <div class="ui__col"> <label class="checkbox"><input class="checkbox__input" type="checkbox"
-                      name="checkbox-1" checked>
+                      name="checkbox" value="checkbox" checked="checked" />
                     <div class="checkbox__wrapper">
                       <div class="checkbox__icon-wrapper"> <svg class="icon checkbox__icon">
                           <use xlink:href="#checkbox"></use>
                         </svg></div>
-                      <div class="checkbox__content">
-                        <div class="text">checkbok</div>
-                      </div>
+                      <div class="checkbox__content"> <span class="text">checkbox <span> checkbox </span><button
+                            class="tooltip-trigger" type="button" data-bs-toggle="tooltip"
+                            data-bs-title="<span> Lorem </span> ipsum dolor sit amet, consectetur adipisicing elit."><svg
+                              class="icon tooltip-trigger__icon">
+                              <use xlink:href="#tooltip"></use>
+                            </svg></button></span></div>
                     </div>
                   </label></div>
                 <div class="ui__col"> <label class="checkbox"><input class="checkbox__input" type="checkbox"
-                      name="checkbox-1">
+                      name="checkbox" value="checkbox" checked="checked" />
                     <div class="checkbox__wrapper">
                       <div class="checkbox__icon-wrapper"> <svg class="icon checkbox__icon">
                           <use xlink:href="#checkbox"></use>
                         </svg></div>
-                      <div class="checkbox__content">
-                        <div class="text">checkbok</div>
+                      <div class="checkbox__content"> <span class="text-md">checkbox <span> checkbox </span></span>
+                      </div>
+                    </div>
+                  </label></div>
+              </div>
+              <div class="ui__row">
+                <div class="ui__col"> <label class="checkbox checkbox--md"><input class="checkbox__input"
+                      type="checkbox" name="checkbox" value="checkbox" checked="checked" />
+                    <div class="checkbox__wrapper">
+                      <div class="checkbox__icon-wrapper"> <svg class="icon checkbox__icon">
+                          <use xlink:href="#checkbox"></use>
+                        </svg></div>
+                      <div class="checkbox__content"> <span class="text">checkbox <span> checkbox </span><button
+                            class="tooltip-trigger" type="button" data-bs-toggle="tooltip"
+                            data-bs-title="<span> Lorem </span> ipsum dolor sit amet, consectetur adipisicing elit."><svg
+                              class="icon tooltip-trigger__icon">
+                              <use xlink:href="#tooltip"></use>
+                            </svg></button></span></div>
+                    </div>
+                  </label></div>
+                <div class="ui__col"> <label class="checkbox checkbox--md"><input class="checkbox__input"
+                      type="checkbox" name="checkbox" value="checkbox" checked="checked" />
+                    <div class="checkbox__wrapper">
+                      <div class="checkbox__icon-wrapper"> <svg class="icon checkbox__icon">
+                          <use xlink:href="#checkbox"></use>
+                        </svg></div>
+                      <div class="checkbox__content"> <span class="text-md">checkbox <span> checkbox </span></span>
                       </div>
                     </div>
                   </label></div>
@@ -452,24 +482,61 @@
               </div>
               <div class="ui__row">
                 <div class="ui__col"> <label class="radio"><input class="radio__input" type="radio" name="radio-1"
-                      checked>
+                      value="radio" checked="checked" />
                     <div class="radio__wrapper">
                       <div class="radio__icon-wrapper">
                         <div class="radio__icon"></div>
                       </div>
-                      <div class="radio__content">
-                        <div class="text">radio </div>
-                      </div>
+                      <div class="radio__content"> <span class="text">radio <span> radio </span><button
+                            class="tooltip-trigger" type="button" data-bs-toggle="tooltip"
+                            data-bs-title="<span> Lorem </span> ipsum dolor sit amet, consectetur adipisicing elit."><svg
+                              class="icon tooltip-trigger__icon">
+                              <use xlink:href="#tooltip"></use>
+                            </svg></button></span></div>
                     </div>
                   </label></div>
-                <div class="ui__col"> <label class="radio"><input class="radio__input" type="radio" name="radio-1">
+                <div class="ui__col"> <label class="radio"><input class="radio__input" type="radio" name="radio-1"
+                      value="radio" />
                     <div class="radio__wrapper">
                       <div class="radio__icon-wrapper">
                         <div class="radio__icon"></div>
                       </div>
-                      <div class="radio__content">
-                        <div class="text">radio</div>
+                      <div class="radio__content"> <span class="text-md">radio <span> radio </span><button
+                            class="tooltip-trigger" type="button" data-bs-toggle="tooltip"
+                            data-bs-title="<span> Lorem </span> ipsum dolor sit amet, consectetur adipisicing elit."><svg
+                              class="icon tooltip-trigger__icon">
+                              <use xlink:href="#tooltip"></use>
+                            </svg></button></span></div>
+                    </div>
+                  </label></div>
+              </div>
+              <div class="ui__row">
+                <div class="ui__col"> <label class="radio radio--md"><input class="radio__input" type="radio"
+                      name="radio-2" value="radio" checked="checked" />
+                    <div class="radio__wrapper">
+                      <div class="radio__icon-wrapper">
+                        <div class="radio__icon"></div>
                       </div>
+                      <div class="radio__content"> <span class="text">radio <span> radio </span><button
+                            class="tooltip-trigger" type="button" data-bs-toggle="tooltip"
+                            data-bs-title="<span> Lorem </span> ipsum dolor sit amet, consectetur adipisicing elit."><svg
+                              class="icon tooltip-trigger__icon">
+                              <use xlink:href="#tooltip"></use>
+                            </svg></button></span></div>
+                    </div>
+                  </label></div>
+                <div class="ui__col"> <label class="radio radio--md"><input class="radio__input" type="radio"
+                      name="radio-2" value="radio" />
+                    <div class="radio__wrapper">
+                      <div class="radio__icon-wrapper">
+                        <div class="radio__icon"></div>
+                      </div>
+                      <div class="radio__content"> <span class="text-md">radio <span> radio </span><button
+                            class="tooltip-trigger" type="button" data-bs-toggle="tooltip"
+                            data-bs-title="<span> Lorem </span> ipsum dolor sit amet, consectetur adipisicing elit."><svg
+                              class="icon tooltip-trigger__icon">
+                              <use xlink:href="#tooltip"></use>
+                            </svg></button></span></div>
                     </div>
                   </label></div>
               </div>
@@ -482,12 +549,11 @@
               </div>
               <div class="ui__row">
                 <div class="ui__col"> <button class="tooltip-trigger" type="button" data-bs-toggle="tooltip"
-                    data-bs-placement="top" data-bs-title="Tooltip on top"><svg class="icon tooltip-trigger__icon">
+                    data-bs-title="<span> Tooltip </span> on top"><svg class="icon tooltip-trigger__icon">
                       <use xlink:href="#tooltip"></use>
                     </svg></button></div>
                 <div class="ui__col"> <button class="tooltip-trigger" type="button" data-bs-toggle="tooltip"
-                    data-bs-placement="top"
-                    data-bs-title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab atque porro, ipsa odio repudiandae perspiciatis soluta minima"><svg
+                    data-bs-title="<span> Lorem </span> ipsum dolor sit amet, consectetur adipisicing elit. Ab atque porro, ipsa odio repudiandae perspiciatis soluta minima"><svg
                       class="icon tooltip-trigger__icon">
                       <use xlink:href="#tooltip"></use>
                     </svg></button></div>

@@ -253,7 +253,10 @@ var tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
 
 for (var index = 0; index < tooltipTriggerList.length; index++) {
   var item = tooltipTriggerList[index];
-  var tooltip = new bootstrap_esm/* Tooltip */.u(item);
+  var tooltip = new bootstrap_esm/* Tooltip */.u(item, {
+    placement: 'top',
+    html: true
+  });
 }
 // EXTERNAL MODULE: ./node_modules/imask/esm/index.js + 21 modules
 var esm = __webpack_require__(2647);

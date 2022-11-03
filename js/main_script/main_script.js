@@ -521,12 +521,13 @@ var jsSliderListArticle = new swiper_esm/* default */.ZP('.jsSliderListArticle .
   }
 });
 var jsSliderEquipmentThumbs = new swiper_esm/* default */.ZP('.jsSliderEquipmentThumbs .slider__inner', {
-  modules: [swiper_esm/* Thumbs */.o3],
+  modules: [swiper_esm/* Thumbs */.o3, swiper_esm/* FreeMode */.Rv],
   slidesPerView: 'auto',
   speed: 500,
   direction: 'vertical',
   spaceBetween: 15,
   mousewheel: true,
+  freeMode: true,
   breakpoints: {
     0: {
       direction: 'horizontal'

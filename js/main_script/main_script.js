@@ -1,6 +1,143 @@
 /******/ (function() { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ 5039:
+/***/ (function() {
+
+var documentHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight, document.body.offsetHeight, document.documentElement.offsetHeight, document.body.clientHeight, document.documentElement.clientHeight);
+var windowHeight = window.innerHeight;
+document.addEventListener('DOMContentLoaded', function () {
+  initAnimationItems();
+  setTimeout(function () {
+    // console.log('initial');
+    animationMain(); // window.hhh()
+  }, 10);
+});
+document.addEventListener('scroll', function () {
+  animationMain(); // console.log('scroll');
+}); // window.hhh = animationMain;
+
+function animationMain() {
+  // console.log('main');
+  var items = document.querySelectorAll('.jsAnimate');
+  var windowOffsetTop = window.pageYOffset;
+  var windowOffsetBottom = windowOffsetTop + windowHeight;
+  updateAnimationItem();
+
+  function updateAnimationItem() {
+    var _loop = function _loop(index) {
+      var item = items[index];
+      var mode = item.getAttribute('data-observer-mode');
+      var percent = item.getAttribute('data-observer-percent');
+      var windowMultiplier = 1;
+
+      if (!item.getAttribute('data-observer-mode')) {
+        item.setAttribute('data-observer-mode', '1');
+      } // SIZES 
+
+
+      var itemHeight = item.offsetHeight;
+      var itemOffsetTop = item.offsetTop;
+      var itemOffsetBottom = itemOffsetTop + itemHeight;
+      var innerTop = itemOffsetBottom - windowOffsetTop;
+      var innerBottom = windowOffsetBottom - itemOffsetTop;
+
+      if (windowHeight < itemHeight) {
+        windowMultiplier = windowHeight / itemHeight;
+      }
+
+      if (itemOffsetBottom >= windowOffsetTop && windowOffsetBottom >= itemOffsetTop) {
+        var resultPercent = percent;
+
+        if (mode == 1) {
+          resultPercent = mode1();
+        } else if (mode == 2) {
+          resultPercent = mode2();
+        } else if (mode == 3) {
+          resultPercent = mode3();
+        } else {
+          resultPercent = mode1();
+        } // console.log('resultPercent = ' + resultPercent);
+
+
+        updateValues(resultPercent);
+      }
+
+      function mode1() {
+        // MODE UpdateOneTime
+        if (innerBottom <= itemHeight * windowMultiplier) {
+          var temp = innerBottom / itemHeight * 100 / windowMultiplier;
+
+          if (percent <= temp) {
+            percent = temp;
+          }
+        } else if (innerTop <= itemHeight * windowMultiplier) {
+          var _temp = innerTop / itemHeight * 100 / windowMultiplier;
+
+          if (percent <= _temp) {
+            percent = _temp;
+          }
+        } else {
+          percent = 100;
+        }
+
+        return percent;
+      }
+
+      function mode2() {
+        // MODE UpdateOnlyDown
+        if (innerBottom <= itemHeight) {
+          percent = innerBottom / itemHeight * 100 / windowMultiplier;
+        } else {
+          percent = 100;
+        }
+      }
+
+      function mode3() {
+        // MODE UpdateAlways
+        if (innerBottom <= itemHeight * windowMultiplier) {
+          percent = innerBottom / itemHeight * 100 / windowMultiplier;
+        } else if (innerTop <= itemHeight * windowMultiplier) {
+          percent = innerTop / itemHeight * 100 / windowMultiplier;
+        } else {
+          percent = 100;
+        }
+      }
+
+      function updateValues(percent) {
+        percent = Math.round(percent);
+        item.setAttribute('data-observer-percent', percent); // console.log('item update' + percent);
+
+        actions(percent);
+      }
+
+      function actions(percent) {
+        if (percent >= 25) {
+          item.classList.add('is-animate');
+        } else {
+          item.classList.remove('is-animate');
+        }
+      }
+    };
+
+    for (var index = 0; index < items.length; index++) {
+      _loop(index);
+    }
+  }
+}
+
+function initAnimationItems() {
+  // console.log('init');
+  var items = document.querySelectorAll('.jsAnimate');
+
+  for (var index = 0; index < items.length; index++) {
+    var item = items[index];
+    item.setAttribute('data-observer-percent', '0');
+  }
+}
+
+/***/ }),
+
 /***/ 8450:
 /***/ (function() {
 
@@ -214,6 +351,9 @@ var Cookies = /*#__PURE__*/function () {
 }();
 
 /* harmony default export */ var scripts = (Cookies);
+// EXTERNAL MODULE: ./node_modules/jquery/dist/jquery.js
+var jquery = __webpack_require__(9755);
+var jquery_default = /*#__PURE__*/__webpack_require__.n(jquery);
 // EXTERNAL MODULE: ./src/components/header/scripts.js
 var header_scripts = __webpack_require__(8450);
 // EXTERNAL MODULE: ./node_modules/bootstrap/dist/js/bootstrap.esm.js + 1 modules
@@ -394,18 +534,20 @@ window.runMask = function () {
     }
   }
 }; // window.runMask() перезвапуск маски
-// EXTERNAL MODULE: ./node_modules/custom-select/build/index.js
-var build = __webpack_require__(9060);
+// EXTERNAL MODULE: ./node_modules/sumoselect/jquery.sumoselect.js
+var jquery_sumoselect = __webpack_require__(4102);
 ;// CONCATENATED MODULE: ./src/components/select/scripts.js
 
 
-window.initSelect = function () {
-  var selects = document.querySelectorAll('.jsSelect');
 
-  for (var index = 0; index < selects.length; index++) {
-    var item = selects[index];
-    (0,build/* default */.Z)(item);
-  }
+window.initSelect = function () {
+  jquery_default()('.jsSelect').each(function () {
+    var thisSelect = jquery_default()(this);
+    var placeholder = thisSelect.attr('placeholder');
+    thisSelect.SumoSelect({
+      placeholder: placeholder
+    });
+  });
 };
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -521,12 +663,13 @@ var jsSliderListArticle = new swiper_esm/* default */.ZP('.jsSliderListArticle .
   }
 });
 var jsSliderEquipmentThumbs = new swiper_esm/* default */.ZP('.jsSliderEquipmentThumbs .slider__inner', {
-  modules: [swiper_esm/* Thumbs */.o3],
+  modules: [swiper_esm/* Thumbs */.o3, swiper_esm/* FreeMode */.Rv],
   slidesPerView: 'auto',
   speed: 500,
   direction: 'vertical',
   spaceBetween: 15,
   mousewheel: true,
+  freeMode: true,
   breakpoints: {
     0: {
       direction: 'horizontal'
@@ -581,7 +724,7 @@ window.onload = function () {
       modules: [swiper_esm/* FreeMode */.Rv],
       loop: false,
       slidesPerView: "auto",
-      spaceBetween: 10,
+      spaceBetween: 20,
       freeMode: true
     });
     var slides = badge.querySelectorAll('.swiper-slide');
@@ -621,7 +764,11 @@ fancybox_esm/* Fancybox.bind */.KR.bind('[data-fancybox]', {
     zoom: false
   }
 });
+// EXTERNAL MODULE: ./src/components/animations/scripts.js
+var animations_scripts = __webpack_require__(5039);
 ;// CONCATENATED MODULE: ./src/init.js
+
+
 
 
 
@@ -634,6 +781,7 @@ fancybox_esm/* Fancybox.bind */.KR.bind('[data-fancybox]', {
 
 var init = function init() {
   new scripts();
+  __webpack_require__.g.$ = (jquery_default());
 };
 
 /* harmony default export */ var src_init = (init);
@@ -663,7 +811,7 @@ src_init();
 /******/ 		};
 /******/ 	
 /******/ 		// Execute the module function
-/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 		__webpack_modules__[moduleId].call(module.exports, module, module.exports, __webpack_require__);
 /******/ 	
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
@@ -707,6 +855,18 @@ src_init();
 /******/ 		};
 /******/ 	}();
 /******/ 	
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	!function() {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = function(module) {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				function() { return module['default']; } :
+/******/ 				function() { return module; };
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	}();
+/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	!function() {
 /******/ 		// define getter functions for harmony exports
@@ -717,6 +877,18 @@ src_init();
 /******/ 				}
 /******/ 			}
 /******/ 		};
+/******/ 	}();
+/******/ 	
+/******/ 	/* webpack/runtime/global */
+/******/ 	!function() {
+/******/ 		__webpack_require__.g = (function() {
+/******/ 			if (typeof globalThis === 'object') return globalThis;
+/******/ 			try {
+/******/ 				return this || new Function('return this')();
+/******/ 			} catch (e) {
+/******/ 				if (typeof window === 'object') return window;
+/******/ 			}
+/******/ 		})();
 /******/ 	}();
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */

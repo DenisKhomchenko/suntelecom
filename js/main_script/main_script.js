@@ -4,37 +4,30 @@
 /***/ 5039:
 /***/ (function() {
 
-var documentHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight, document.body.offsetHeight, document.documentElement.offsetHeight, document.body.clientHeight, document.documentElement.clientHeight);
-var windowHeight = window.innerHeight;
-document.addEventListener('DOMContentLoaded', function () {
-  initAnimationItems();
-  setTimeout(function () {
-    // console.log('initial');
-    animationMain(); // window.hhh()
-  }, 10);
-});
-document.addEventListener('scroll', function () {
-  animationMain(); // console.log('scroll');
-}); // window.hhh = animationMain;
+window.animations = {
+  documentHeight: Math.max(document.body.scrollHeight, document.documentElement.scrollHeight, document.body.offsetHeight, document.documentElement.offsetHeight, document.body.clientHeight, document.documentElement.clientHeight),
+  windowHeight: window.innerHeight,
+  items: document.querySelectorAll('.jsAnimate'),
+  activeClass: 'is-animate',
+  init: function init() {
+    var items = window.animations.items;
 
-function animationMain() {
-  // console.log('main');
-  var items = document.querySelectorAll('.jsAnimate');
-  var windowOffsetTop = window.pageYOffset;
-  var windowOffsetBottom = windowOffsetTop + windowHeight;
-  updateAnimationItem();
+    for (var index = 0; index < items.length; index++) {
+      var item = items[index];
+      !item.getAttribute('data-observe-percent') ? item.setAttribute('data-observe-percent', '0') : '';
+    }
+  },
+  update: function update() {
+    var items = window.animations.items;
+    var windowOffsetTop = window.pageYOffset;
+    var windowOffsetBottom = windowOffsetTop + window.animations.windowHeight;
 
-  function updateAnimationItem() {
     var _loop = function _loop(index) {
       var item = items[index];
-      var mode = item.getAttribute('data-observer-mode');
-      var percent = item.getAttribute('data-observer-percent');
-      var windowMultiplier = 1;
-
-      if (!item.getAttribute('data-observer-mode')) {
-        item.setAttribute('data-observer-mode', '1');
-      } // SIZES 
-
+      var mode = item.getAttribute('data-observe-mode') ? item.getAttribute('data-observe-mode') : '1';
+      var percent = item.getAttribute('data-observe-percent');
+      var triggerPercent = item.getAttribute('data-observe-trigger') ? item.getAttribute('data-observe-trigger') : 25;
+      var windowMultiplier = 1; // SIZES 
 
       var itemHeight = item.offsetHeight;
       var itemOffsetTop = item.offsetTop;
@@ -42,23 +35,22 @@ function animationMain() {
       var innerTop = itemOffsetBottom - windowOffsetTop;
       var innerBottom = windowOffsetBottom - itemOffsetTop;
 
-      if (windowHeight < itemHeight) {
-        windowMultiplier = windowHeight / itemHeight;
+      if (window.animations.windowHeight < itemHeight) {
+        windowMultiplier = window.animations.windowHeight / itemHeight;
       }
 
       if (itemOffsetBottom >= windowOffsetTop && windowOffsetBottom >= itemOffsetTop) {
         var resultPercent = percent;
 
-        if (mode == 1) {
+        if (mode == '1') {
           resultPercent = mode1();
-        } else if (mode == 2) {
+        } else if (mode == '2') {
           resultPercent = mode2();
-        } else if (mode == 3) {
+        } else if (mode == '3') {
           resultPercent = mode3();
         } else {
           resultPercent = mode1();
-        } // console.log('resultPercent = ' + resultPercent);
-
+        }
 
         updateValues(resultPercent);
       }
@@ -91,6 +83,8 @@ function animationMain() {
         } else {
           percent = 100;
         }
+
+        return percent;
       }
 
       function mode3() {
@@ -102,20 +96,21 @@ function animationMain() {
         } else {
           percent = 100;
         }
+
+        return percent;
       }
 
       function updateValues(percent) {
         percent = Math.round(percent);
-        item.setAttribute('data-observer-percent', percent); // console.log('item update' + percent);
-
+        item.setAttribute('data-observe-percent', percent);
         actions(percent);
       }
 
       function actions(percent) {
-        if (percent >= 25) {
-          item.classList.add('is-animate');
+        if (percent >= triggerPercent) {
+          item.classList.add(window.animations.activeClass);
         } else {
-          item.classList.remove('is-animate');
+          item.classList.remove(window.animations.activeClass);
         }
       }
     };
@@ -124,17 +119,18 @@ function animationMain() {
       _loop(index);
     }
   }
-}
-
-function initAnimationItems() {
-  // console.log('init');
-  var items = document.querySelectorAll('.jsAnimate');
-
-  for (var index = 0; index < items.length; index++) {
-    var item = items[index];
-    item.setAttribute('data-observer-percent', '0');
-  }
-}
+};
+document.addEventListener('DOMContentLoaded', function () {
+  window.animations.init();
+  setTimeout(function () {
+    window.animations.update();
+  }, 10);
+});
+document.addEventListener('scroll', function () {
+  window.animations.documentHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight, document.body.offsetHeight, document.documentElement.offsetHeight, document.body.clientHeight, document.documentElement.clientHeight);
+  window.animations.windowHeight = window.innerHeight;
+  window.animations.update();
+});
 
 /***/ }),
 
@@ -283,7 +279,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 /***/ }),
 
-/***/ 1742:
+/***/ 1465:
 /***/ (function(__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -713,45 +709,35 @@ document.addEventListener('DOMContentLoaded', function () {
       _loop(index);
     }
   }
-});
-
-window.onload = function () {
-  var badges = document.querySelectorAll('.jsSliderBadges');
-
-  var _loop2 = function _loop2(index) {
-    var badge = badges[index];
-    var slider = new swiper_esm/* default */.ZP(badge.querySelector('.slider__inner'), {
-      modules: [swiper_esm/* FreeMode */.Rv],
-      loop: false,
-      slidesPerView: "auto",
-      spaceBetween: 20,
-      freeMode: true
-    });
-    var slides = badge.querySelectorAll('.swiper-slide');
-
-    for (var _index = 0; _index < slides.length; _index++) {
-      var slide = slides[_index];
-
-      var _badge = slide.querySelector('.badge');
-
-      if (_badge.querySelector('input[checked]')) {
-        update(_index);
-      }
-
-      if (_badge.classList.contains('jsTabLink') && _badge.classList.contains('is-active')) {
-        update(_index);
-      }
-    }
-
-    function update(realIndex) {
-      slider.slideTo(realIndex, 0);
-    }
-  };
-
-  for (var index = 0; index < badges.length; index++) {
-    _loop2(index);
-  }
-};
+}); // window.onload = function (){
+//     if(document.querySelector('.jsSliderBadges')){
+//         let badges = document.querySelectorAll('.jsSliderBadges');
+//         for (let index = 0; index < badges.length; index++) {
+//             const badge = badges[index];
+//             const slider = new Swiper( badge.querySelector('.slider__inner'), {
+//                 modules: [FreeMode],
+//                 loop: false,
+//                 slidesPerView: "auto",
+//                 // spaceBetween: 20,
+//                 freeMode: true,
+//             });
+//             let slides = badge.querySelectorAll('.swiper-slide');
+//             for (let index = 0; index < slides.length; index++) {
+//                 const slide = slides[index];
+//                 let badge = slide.querySelector('.badge')
+//                 if(badge.querySelector('input[checked]')){
+//                     update(index);
+//                 }
+//                 if(badge.classList.contains('jsTabLink') && badge.classList.contains('is-active')){
+//                     update(index);
+//                 }
+//             }
+//             function update(realIndex){
+//                 slider.slideTo(realIndex, 0)
+//             }
+//         }
+//     }
+// }
 // EXTERNAL MODULE: ./src/components/tabs/scripts.js
 var tabs_scripts = __webpack_require__(2685);
 // EXTERNAL MODULE: ./node_modules/@fancyapps/ui/dist/fancybox.esm.js
@@ -766,6 +752,198 @@ fancybox_esm/* Fancybox.bind */.KR.bind('[data-fancybox]', {
 });
 // EXTERNAL MODULE: ./src/components/animations/scripts.js
 var animations_scripts = __webpack_require__(5039);
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/defineProperty.js
+var defineProperty = __webpack_require__(4942);
+// EXTERNAL MODULE: ./node_modules/gator/gator.js
+var gator = __webpack_require__(4140);
+var gator_default = /*#__PURE__*/__webpack_require__.n(gator);
+// EXTERNAL MODULE: ./node_modules/yup/es/index.js + 23 modules
+var es = __webpack_require__(1260);
+;// CONCATENATED MODULE: ./src/components/validator/services.js
+
+var MSG_LETTERS = 'Поле не может содержать цифры';
+var MSG_REQUIRED = 'Поле обязательно для заполнения';
+var MSG_TEXT = 'Поле не должно содержать цифры';
+var MSG_TEXT_MIN = 'Значение не может быть таким коротким';
+var MSG_TEXT_MAX = 'Значение не может быть таким длинным';
+var MSG_PHONE = 'Телефон заполнен не верно';
+var MSG_EMAIL = 'Email заполнен не верно';
+var MSG_NUMBER = 'Поле должно содержать цифры';
+var MSG_NUMBER_MIN = 'Значение не может быть меньше';
+var MSG_NUMBER_MAX = 'Значение не может быть больше';
+
+var validateLetters = function validateLetters(value, min, max) {
+  var lettersRegExp = /^[A-ZА-Яa-zа-я\s]*$/;
+  var scheme = es/* string */.Z_().trim().required(MSG_REQUIRED).matches(lettersRegExp, MSG_LETTERS).min(min, MSG_TEXT_MIN).max(max, MSG_TEXT_MAX);
+  return scheme.isValidSync(value) ? 'valid' : 'invalid';
+};
+
+var validateText = function validateText(value, min, max) {
+  var scheme = es/* string */.Z_(MSG_TEXT).trim().required(MSG_REQUIRED).min(min, MSG_TEXT_MIN).max(max, MSG_TEXT_MAX);
+  return scheme.isValidSync(value) ? 'valid' : 'invalid';
+};
+
+var validatePhone = function validatePhone(value) {
+  var phoneRegExp = /^((8|\+7)[- ]?)?(\(?\d{3}\)?[- ]?)?[\d\- ]{7,10}$/;
+  var scheme = es/* string */.Z_().trim().required(MSG_REQUIRED).matches(phoneRegExp, MSG_PHONE);
+  return scheme.isValidSync(value) ? 'valid' : 'invalid';
+};
+
+var validateEmail = function validateEmail(value) {
+  var scheme = es/* string */.Z_(MSG_TEXT).trim().required(MSG_REQUIRED).email(MSG_EMAIL);
+  return scheme.isValidSync(value) ? 'valid' : 'invalid';
+};
+
+var validateNumber = function validateNumber(value, min, max) {
+  var scheme = es/* number */.Rx(MSG_NUMBER).required(MSG_REQUIRED).min(min, MSG_NUMBER_MIN).max(max, MSG_NUMBER_MAX);
+  return scheme.isValidSync(value) ? 'valid' : 'invalid';
+};
+
+var validateCheckbox = function validateCheckbox(value) {
+  var scheme = es/* boolean */.O7().oneOf([true]);
+  return scheme.isValidSync(value) ? 'valid' : 'invalid';
+};
+
+var validatorServices = {
+  validateLetters: validateLetters,
+  validateText: validateText,
+  validatePhone: validatePhone,
+  validateEmail: validateEmail,
+  validateNumber: validateNumber,
+  validateCheckbox: validateCheckbox
+};
+/* harmony default export */ var services = (validatorServices);
+;// CONCATENATED MODULE: ./src/components/validator/view.js
+var renderField = function renderField(validationState, node, invalidClass) {
+  if (validationState === 'valid') {
+    node.classList.remove(invalidClass);
+  }
+
+  if (validationState === 'invalid') {
+    node.classList.add(invalidClass);
+  }
+};
+
+var renderError = function renderError(validationState, node, visibilityClass) {
+  var message = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : '';
+
+  if (validationState === 'valid') {
+    node.classList.remove(visibilityClass);
+    node.textContent = '';
+  }
+
+  if (validationState === 'invalid') {
+    node.classList.add(visibilityClass);
+    node.textContent = message;
+  }
+};
+
+var validatorView = {
+  renderField: renderField,
+  renderError: renderError
+};
+/* harmony default export */ var view = (validatorView);
+;// CONCATENATED MODULE: ./src/components/formValidator/init.js
+
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { (0,defineProperty/* default */.Z)(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+
+
+
+var INVALID_CLASS = 'form__field--invalid';
+var ERROR_VISIBILITY_CLASS = 'form__error--visible';
+var VALIDATION_SERVICES_MAP = {
+  letters: function letters(_ref) {
+    var value = _ref.value,
+        min = _ref.min,
+        max = _ref.max;
+    return services.validateLetters(value, min, max);
+  },
+  number: function number(_ref2) {
+    var value = _ref2.value,
+        min = _ref2.min,
+        max = _ref2.max;
+    return services.validateNumber(value, min, max);
+  },
+  text: function text(_ref3) {
+    var value = _ref3.value,
+        min = _ref3.min,
+        max = _ref3.max;
+    return services.validateText(value, min, max);
+  },
+  phone: function phone(_ref4) {
+    var value = _ref4.value;
+    return services.validatePhone(value);
+  },
+  email: function email(_ref5) {
+    var value = _ref5.value;
+    return services.validateEmail(value);
+  },
+  check: function check(_ref6) {
+    var value = _ref6.value;
+    return services.validateCheckbox(value);
+  }
+};
+
+var validateField = function validateField(input) {
+  var inputBox = input.closest('[data-entity="v-field-box"]');
+  var inputError = inputBox.querySelector('[data-entity="v-field-error"]');
+  var inputValue = input.type !== 'checkbox' ? input.value : input.checked;
+  var validator = {
+    name: input.dataset.validator,
+    options: {
+      min: +input.dataset.min || 2,
+      max: +input.dataset.max || 200
+    }
+  };
+  var validatorName = validator.name,
+      validatorOptions = validator.options;
+  var validationService = VALIDATION_SERVICES_MAP[validatorName];
+  var validationState = validationService(_objectSpread({
+    value: inputValue
+  }, validatorOptions));
+  view.renderField(validationState, inputBox, INVALID_CLASS);
+
+  if (inputError) {
+    view.renderError(validationState, inputError, ERROR_VISIBILITY_CLASS, 'Поле заполнено некорректно');
+  }
+
+  return validationState;
+};
+
+var validateForm = function validateForm(form) {
+  var formValidationState = 'idle';
+  var fields = Array.from(form.querySelectorAll('[data-entity="v-field"]'));
+  fields.forEach(function (input) {
+    var fieldValidationState = validateField(input);
+
+    if (fieldValidationState === 'invalid') {
+      formValidationState = 'invalid';
+    }
+  });
+  return formValidationState;
+};
+
+var registerFormValidator = function registerFormValidator() {
+  if (window.spiks) {
+    window.spiks.FormManager = {
+      attachEvents: function attachEvents(formNode) {
+        gator_default()(formNode).on('input', '[data-entity="v-field"]', function (_ref7) {
+          var target = _ref7.target;
+          validateField(target);
+        });
+      },
+      validate: function validate(formNode) {
+        return validateForm(formNode) !== 'invalid';
+      }
+    };
+  }
+};
+
+/* harmony default export */ var formValidator_init = (registerFormValidator);
 ;// CONCATENATED MODULE: ./src/init.js
 
 
@@ -779,8 +957,11 @@ var animations_scripts = __webpack_require__(5039);
 
 
 
+
 var init = function init() {
+  __webpack_require__.g.spiks = {};
   new scripts();
+  formValidator_init();
   __webpack_require__.g.$ = (jquery_default());
 };
 
@@ -805,13 +986,16 @@ src_init();
 /******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = __webpack_module_cache__[moduleId] = {
-/******/ 			// no module.id needed
-/******/ 			// no module.loaded needed
+/******/ 			id: moduleId,
+/******/ 			loaded: false,
 /******/ 			exports: {}
 /******/ 		};
 /******/ 	
 /******/ 		// Execute the module function
 /******/ 		__webpack_modules__[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Flag the module as loaded
+/******/ 		module.loaded = true;
 /******/ 	
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
@@ -907,6 +1091,15 @@ src_init();
 /******/ 		};
 /******/ 	}();
 /******/ 	
+/******/ 	/* webpack/runtime/node module decorator */
+/******/ 	!function() {
+/******/ 		__webpack_require__.nmd = function(module) {
+/******/ 			module.paths = [];
+/******/ 			if (!module.children) module.children = [];
+/******/ 			return module;
+/******/ 		};
+/******/ 	}();
+/******/ 	
 /******/ 	/* webpack/runtime/runtimeId */
 /******/ 	!function() {
 /******/ 		__webpack_require__.j = 940;
@@ -972,7 +1165,7 @@ src_init();
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, [216], function() { return __webpack_require__(1742); })
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, [216], function() { return __webpack_require__(1465); })
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

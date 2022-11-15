@@ -32,12 +32,10 @@
           <div class="header__burger-body">
             <div class="header__nav">
               <nav class="nav">
-                <div class="nav__chapter">
-                  <h2 class="nav__title">МЕНЮ</h2><a class="nav__item" href="#">Для себя</a><a class="nav__item"
-                    href="#">Для бизнеса</a><a class="nav__item" href="articles.html">Новости</a><a class="nav__item"
+                <div class="nav__chapter"><a class="nav__item" href="#">Для себя</a><a class="nav__item" href="#">Для
+                    бизнеса</a><a class="nav__item" href="articles.html">Новости</a><a class="nav__item"
                     href="actions.html">Акции</a><a class="nav__item" href="#">О нас</a><a class="nav__item"
-                    href="сcontacts.html">Контакты</a>
-                </div>
+                    href="сcontacts.html">Контакты</a></div>
                 <div class="nav__chapter">
                   <h2 class="nav__title">Услуги</h2><a class="nav__item" href="internet.html">Интернет</a><a
                     class="nav__item" href="television.html">Телевидение</a><a class="nav__item"
@@ -57,432 +55,315 @@
               class="text-sm breadcrumbs__link" href="#">Интернет</a></div>
         </div>
       </div>
-      <section class="section section-internet jsTabs jsAnimate">
+      <section class="section section-internet jsAnimate">
         <div class="container">
           <div class="section__header">
             <h1 class="h2 section__title">Интернет</h1>
             <div class="badges section__badges">
-              <div class="slider badges__list jsSliderBadges">
-                <div class="swiper slider__inner">
-                  <div class="swiper-wrapper slider__wrapper">
-                    <div class="swiper-slide slider__slide"><button class="badge badge--md jsTabLink is-active"
-                        type="button">
-                        <div class="badge__wrapper"> <span>Для физических лиц</span></div>
-                      </button></div>
-                    <div class="swiper-slide slider__slide"><button class="badge badge--md jsTabLink" type="button">
-                        <div class="badge__wrapper"> <span>Для юридических лиц</span></div>
-                      </button></div>
-                  </div>
-                </div>
-              </div>
+              <div class="badges__list"><a class="badge badge--md is-active" href="#">
+                  <div class="badge__wrapper"> <span>Для физических лиц</span></div>
+                </a><a class="badge badge--md" href="#">
+                  <div class="badge__wrapper"> <span>Для юридических лиц</span></div>
+                </a></div>
             </div>
           </div>
           <div class="section__inner">
             <div class="section-internet__content">
-              <div class="section-internet__tab-item jsTabItem">
-                <div class="form-block">
-                  <div class="form-block__main">
-                    <h4 class="h4 form-block__title">Проверьте ваш адрес</h4>
-                    <div class="form-block__form">
-                      <form action="#">
-                        <div class="input form-block__input"> <input class="input__field jsInput" type="text"
-                            placeholder="Город/ Населённый пункт" />
-                          <div class="input__error">Обязательно для заполнения</div>
-                        </div>
-                        <div class="input form-block__input"> <input class="input__field jsInput" type="text"
-                            placeholder="Улица" />
-                          <div class="input__error">Обязательно для заполнения</div>
-                        </div>
-                        <div class="form-block__button-wrapper"> <button class="button form-block__button"
-                            type="submit"><span class="button__text">Проверить адрес</span><svg
-                              class="icon button__icon">
-                              <use xlink:href="#arrow-round--right"></use>
-                            </svg></button>
-                          <div class="status-label jsStatusPanel form-block__status is-loading is-ok is-error">
-                            <div class="status-label__wrapper status-label__wrapper--loading"><svg
-                                class="icon status-label__icon">
-                                <use xlink:href="#status-loading"></use>
-                              </svg>
-                              <div class="text text-helvetica status-label__title">Идёт проверка адреса..</div>
-                            </div>
-                            <div class="status-label__wrapper status-label__wrapper--error"><svg
-                                class="icon status-label__icon">
-                                <use xlink:href="#status-error"></use>
-                              </svg>
-                              <div class="text text-helvetica status-label__title">Подключение невозможно</div>
-                            </div>
-                            <div class="status-label__wrapper status-label__wrapper--ok"><svg
-                                class="icon status-label__icon">
-                                <use xlink:href="#status-ok"></use>
-                              </svg>
-                              <div class="text text-helvetica status-label__title">Подключение возможно</div>
-                            </div>
+              <div class="form-block">
+                <div class="form-block__main">
+                  <h4 class="h4 form-block__title">Проверьте ваш адрес</h4>
+                  <div class="form-block__form">
+                    <form action="#">
+                      <div class="input form-block__input"> <input class="input__field jsInput" type="text"
+                          placeholder="Город/ Населённый пункт" />
+                        <div class="input__error">Обязательно для заполнения</div>
+                      </div>
+                      <div class="input form-block__input"> <input class="input__field jsInput" type="text"
+                          placeholder="Улица" />
+                        <div class="input__error">Обязательно для заполнения</div>
+                      </div>
+                      <div class="form-block__button-wrapper"> <button class="button form-block__button"
+                          type="submit"><span class="button__text">Проверить адрес</span><svg class="icon button__icon">
+                            <use xlink:href="#arrow-round--right"></use>
+                          </svg></button>
+                        <div class="status-label jsStatusPanel form-block__status is-loading is-ok is-error">
+                          <div class="status-label__wrapper status-label__wrapper--loading"><svg
+                              class="icon status-label__icon">
+                              <use xlink:href="#status-loading"></use>
+                            </svg>
+                            <div class="text text-helvetica status-label__title">Идёт проверка адреса..</div>
                           </div>
-                        </div>
-                      </form>
-                    </div>
-                  </div><img class="form-block__bg form-block__bg--1" src="assets\media\form\map.svg" alt="" /><img
-                    class="form-block__bg form-block__bg--2" src="assets\media\form\planet.svg" alt="" />
-                </div>
-                <div class="constructor">
-                  <form action="#">
-                    <div class="constructor__inner">
-                      <div class="constructor__main">
-                        <div class="constructor__block">
-                          <h4 class="text-lg constructor__text-title">Доступные специальные тарифы по вашему адресу:
-                          </h4>
-                          <p class="text constructor__text">г. Санкт-Петербург, Красносельский р-н, Петергофское шоссе,
-                            д.17, корп. 1</p>
-                        </div>
-                        <div class="constructor__block">
-                          <div class="constructor__item">
-                            <h5 class="text constructor__item-title">Выберите услугу:</h5>
-                            <div class="constructor__item-list"><label class="checkbox"><input class="checkbox__input"
-                                  type="checkbox" name="checkbox-1" value="checkbox" />
-                                <div class="checkbox__wrapper">
-                                  <div class="checkbox__icon-wrapper"> <svg class="icon checkbox__icon">
-                                      <use xlink:href="#checkbox"></use>
-                                    </svg></div>
-                                  <div class="checkbox__content"> <span class="text">Интернет</span></div>
-                                </div>
-                              </label><label class="checkbox"><input class="checkbox__input" type="checkbox"
-                                  name="checkbox-1" value="checkbox" checked="checked" />
-                                <div class="checkbox__wrapper">
-                                  <div class="checkbox__icon-wrapper"> <svg class="icon checkbox__icon">
-                                      <use xlink:href="#checkbox"></use>
-                                    </svg></div>
-                                  <div class="checkbox__content"> <span class="text">Цифровое ТВ</span></div>
-                                </div>
-                              </label><label class="checkbox"><input class="checkbox__input" type="checkbox"
-                                  name="checkbox-1" value="checkbox" checked="checked" />
-                                <div class="checkbox__wrapper">
-                                  <div class="checkbox__icon-wrapper"> <svg class="icon checkbox__icon">
-                                      <use xlink:href="#checkbox"></use>
-                                    </svg></div>
-                                  <div class="checkbox__content"> <span class="text">Телефония<button
-                                        class="tooltip-trigger" type="button" data-bs-toggle="tooltip"
-                                        data-bs-title="<span> Lorem </span> ipsum dolor sit amet, consectetur adipisicing elit."><svg
-                                          class="icon tooltip-trigger__icon">
-                                          <use xlink:href="#tooltip"></use>
-                                        </svg></button></span></div>
-                                </div>
-                              </label></div>
+                          <div class="status-label__wrapper status-label__wrapper--error"><svg
+                              class="icon status-label__icon">
+                              <use xlink:href="#status-error"></use>
+                            </svg>
+                            <div class="text text-helvetica status-label__title">Подключение невозможно</div>
                           </div>
-                          <div class="constructor__item">
-                            <h5 class="text constructor__item-title">Скорость интернета:</h5>
-                            <div class="constructor__item-list"> <label class="badge"><input class="badge__input"
-                                  type="radio" name="badge-1" value="badge" checked="checked" />
-                                <div class="badge__wrapper"> <span>Стартовый</span></div>
-                              </label><label class="badge"><input class="badge__input" type="radio" name="badge-1"
-                                  value="badge" />
-                                <div class="badge__wrapper"> <span>100 Мбит/с</span></div>
-                              </label><label class="badge"><input class="badge__input" type="radio" name="badge-1"
-                                  value="badge" />
-                                <div class="badge__wrapper"> <span>300 Мбит/с</span></div>
-                              </label><label class="badge"><input class="badge__input" type="radio" name="badge-1"
-                                  value="badge" />
-                                <div class="badge__wrapper"> <span>555 Мбит/с</span></div>
-                              </label></div>
-                          </div>
-                          <div class="constructor__item">
-                            <div class="constructor__item-list"> <label class="checkbox"><input class="checkbox__input"
-                                  type="checkbox" name="checkbox-2" value="checkbox" />
-                                <div class="checkbox__wrapper">
-                                  <div class="checkbox__icon-wrapper"> <svg class="icon checkbox__icon">
-                                      <use xlink:href="#checkbox"></use>
-                                    </svg></div>
-                                  <div class="checkbox__content"> <span class="text">Внешний IP-адрес</span></div>
-                                </div>
-                              </label></div>
-                          </div>
-                          <p class="text constructor__text">Возможно подключение на более высоких скоростях. Подробности
-                            уточняйте по телефону.</p>
-                        </div>
-                        <div class="constructor__block">
-                          <div class="constructor__item">
-                            <h5 class="text constructor__item-title">Условия оплаты:</h5>
-                            <div class="constructor__item-list"> <label class="radio"><input class="radio__input"
-                                  type="radio" name="radio-1" value="radio" checked="checked" />
-                                <div class="radio__wrapper">
-                                  <div class="radio__icon-wrapper">
-                                    <div class="radio__icon"></div>
-                                  </div>
-                                  <div class="radio__content"> <span class="text">У меня свой</span></div>
-                                </div>
-                              </label><label class="radio"><input class="radio__input" type="radio" name="radio-1"
-                                  value="radio" />
-                                <div class="radio__wrapper">
-                                  <div class="radio__icon-wrapper">
-                                    <div class="radio__icon"></div>
-                                  </div>
-                                  <div class="radio__content"> <span class="text">У меня свой</span></div>
-                                </div>
-                              </label></div>
-                          </div>
-                          <div class="constructor__item">
-                            <h5 class="text constructor__item-title">Роутер:</h5>
-                            <div class="constructor__item-list"> <label class="checkbox"><input class="checkbox__input"
-                                  type="checkbox" name="checkbox-3" value="checkbox" />
-                                <div class="checkbox__wrapper">
-                                  <div class="checkbox__icon-wrapper"> <svg class="icon checkbox__icon">
-                                      <use xlink:href="#checkbox"></use>
-                                    </svg></div>
-                                  <div class="checkbox__content"> <span class="text">Купить<button
-                                        class="tooltip-trigger" type="button" data-bs-toggle="tooltip"
-                                        data-bs-title="<span> Lorem </span> ipsum dolor sit amet, consectetur adipisicing elit."><svg
-                                          class="icon tooltip-trigger__icon">
-                                          <use xlink:href="#tooltip"></use>
-                                        </svg></button></span></div>
-                                </div>
-                              </label><label class="checkbox"><input class="checkbox__input" type="checkbox"
-                                  name="checkbox-3" value="checkbox" />
-                                <div class="checkbox__wrapper">
-                                  <div class="checkbox__icon-wrapper"> <svg class="icon checkbox__icon">
-                                      <use xlink:href="#checkbox"></use>
-                                    </svg></div>
-                                  <div class="checkbox__content"> <span class="text">У меня свой</span></div>
-                                </div>
-                              </label></div>
-                          </div>
-                          <p class="text constructor__text">*Стоимость роутера рассчитвается отдельно</p>
-                        </div>
-                        <div class="constructor__block">
-                          <div class="constructor__item">
-                            <h5 class="text constructor__item-title">ТВ:</h5>
-                            <div class="constructor__item-list"> <label class="badge badge--md"><input
-                                  class="badge__input" type="radio" name="badge-2" value="badge" checked="checked" />
-                                <div class="badge__wrapper"> <span>MOOVI</span></div>
-                              </label><label class="badge badge--md"><input class="badge__input" type="radio"
-                                  name="badge-2" value="badge" checked="checked" />
-                                <div class="badge__wrapper"> <span>Смотрёшка</span></div>
-                              </label>
-                              <div class="select"><select class="jsSelect" name="select-1">
-                                  <option value="Лайт (150 руб)">Лайт (150 руб)</option>
-                                  <option value="Лайт (250 руб)">Лайт (250 руб)</option>
-                                  <option value="Лайт (150 руб)">Лайт (350 руб)</option>
-                                </select></div>
-                              <div class="select"><select class="jsSelect" name="select-2" multiple="multiple"
-                                  placeholder="Выберите дополнительные пакеты">
-                                  <option value="Мультирум для пакета Социальный. 1 доп. точка просмотра">Мультирум для
-                                    пакета Социальный. 1 доп. точка просмотра</option>
-                                  <option value="Мультирум для пакета Социальный. 1 доп. точка просмотра">Мультирум для
-                                    пакета Социальный. 1 доп. точка просмотра</option>
-                                  <option value="Мультирум для пакета Социальный. 1 доп. точка просмотра">Мультирум для
-                                    пакета Социальный. 1 доп. точка просмотра</option>
-                                  <option value="Мультирум для пакета Социальный. 1 доп. точка просмотра">Мультирум для
-                                    пакета Социальный. 1 доп. точка просмотра</option>
-                                  <option value="Мультирум для пакета Социальный. 1 доп. точка просмотра">Мультирум для
-                                    пакета Социальный. 1 доп. точка просмотра</option>
-                                  <option value="Мультирум для пакета Социальный. 1 доп. точка просмотра">Мультирум для
-                                    пакета Социальный. 1 доп. точка просмотра</option>
-                                  <option value="Мультирум для пакета Социальный. 1 доп. точка просмотра">Мультирум для
-                                    пакета Социальный. 1 доп. точка просмотра</option>
-                                  <option value="Мультирум для пакета Социальный. 1 доп. точка просмотра">Мультирум для
-                                    пакета Социальный. 1 доп. точка просмотра</option>
-                                  <option value="Мультирум для пакета Социальный. 1 доп. точка просмотра">Мультирум для
-                                    пакета Социальный. 1 доп. точка просмотра</option>
-                                  <option value="Мультирум для пакета Социальный. 1 доп. точка просмотра">Мультирум для
-                                    пакета Социальный. 1 доп. точка просмотра</option>
-                                  <option value="Мультирум для пакета Социальный. 1 доп. точка просмотра">Мультирум для
-                                    пакета Социальный. 1 доп. точка просмотра</option>
-                                  <option value="Мультирум для пакета Социальный. 1 доп. точка просмотра">Мультирум для
-                                    пакета Социальный. 1 доп. точка просмотра</option>
-                                  <option value="Мультирум для пакета Социальный. 1 доп. точка просмотра">Мультирум для
-                                    пакета Социальный. 1 доп. точка просмотра</option>
-                                  <option value="Мультирум для пакета Социальный. 1 доп. точка просмотра">Мультирум для
-                                    пакета Социальный. 1 доп. точка просмотра</option>
-                                  <option value="Мультирум для пакета Социальный. 1 доп. точка просмотра">Мультирум для
-                                    пакета Социальный. 1 доп. точка просмотра</option>
-                                  <option value="Мультирум для пакета Социальный. 1 доп. точка просмотра">Мультирум для
-                                    пакета Социальный. 1 доп. точка просмотра</option>
-                                  <option value="Мультирум для пакета Социальный. 1 доп. точка просмотра">Мультирум для
-                                    пакета Социальный. 1 доп. точка просмотра</option>
-                                  <option value="Мультирум для пакета Социальный. 1 доп. точка просмотра">Мультирум для
-                                    пакета Социальный. 1 доп. точка просмотра</option>
-                                  <option value="Мультирум для пакета Социальный. 1 доп. точка просмотра">Мультирум для
-                                    пакета Социальный. 1 доп. точка просмотра</option>
-                                  <option value="Мультирум для пакета Социальный. 1 доп. точка просмотра">Мультирум для
-                                    пакета Социальный. 1 доп. точка просмотра</option>
-                                  <option value="Мультирум для пакета Социальный. 1 доп. точка просмотра">Мультирум для
-                                    пакета Социальный. 1 доп. точка просмотра</option>
-                                  <option value="Мультирум для пакета Социальный. 1 доп. точка просмотра">Мультирум для
-                                    пакета Социальный. 1 доп. точка просмотра</option>
-                                  <option value="Мультирум для пакета Социальный. 1 доп. точка просмотра">Мультирум для
-                                    пакета Социальный. 1 доп. точка просмотра</option>
-                                  <option value="Мультирум для пакета Социальный. 1 доп. точка просмотра">Мультирум для
-                                    пакета Социальный. 1 доп. точка просмотра</option>
-                                  <option value="Мультирум для пакета Социальный. 1 доп. точка просмотра">Мультирум для
-                                    пакета Социальный. 1 доп. точка просмотра</option>
-                                </select></div>
-                            </div>
+                          <div class="status-label__wrapper status-label__wrapper--ok"><svg
+                              class="icon status-label__icon">
+                              <use xlink:href="#status-ok"></use>
+                            </svg>
+                            <div class="text text-helvetica status-label__title">Подключение возможно</div>
                           </div>
                         </div>
                       </div>
-                      <div class="constructor__form">
-                        <div class="constructor__form-info">
-                          <h3 class="h4 constructor__form-title">Заявка на подключение:</h3>
-                          <p class="text constructor__form-subtitle">Заполните ваши контактные данные, и наш менеджер
-                            свяжется с вами в ближайшее время</p>
-                        </div>
-                        <div class="constructor__form-content">
-                          <div class="constructor__form-row">
-                            <div class="input input--md"><input class="input__field jsInput" type="text" name="name"
-                                placeholder="Ваше имя" />
-                              <div class="input__error">Обязательно для заполнения</div>
-                            </div>
-                            <div class="input input--md"><input class="input__field jsInput" type="text" name="email"
-                                placeholder="E-mail*" />
-                              <div class="input__error">Обязательно для заполнения</div>
-                            </div>
-                            <div class="input input--md"><input class="input__field jsInput jsPhoneMask jsInputReq"
-                                type="text" name="phone" placeholder="+7(___) ___ - __ - __" />
-                              <div class="input__error">Обязательно для заполнения</div>
-                            </div>
-                            <div class="input input--md"><input class="input__field jsInput" type="text" name="home"
-                                placeholder="Квартира" />
-                              <div class="input__error">Обязательно для заполнения</div>
-                            </div>
-                          </div>
-                          <div class="constructor__form-row"> <label class="checkbox checkbox--md"><input
-                                class="checkbox__input" type="checkbox" name="checkbox-4" value="checkbox" />
+                    </form>
+                  </div>
+                </div><img class="form-block__bg form-block__bg--1" src="assets\media\form\map.svg" alt="" /><img
+                  class="form-block__bg form-block__bg--2" src="assets\media\form\planet.svg" alt="" />
+              </div>
+              <div class="constructor">
+                <form action="#">
+                  <div class="constructor__inner">
+                    <div class="constructor__main">
+                      <div class="constructor__block">
+                        <h4 class="text-lg constructor__text-title">Доступные специальные тарифы по вашему адресу:</h4>
+                        <p class="text constructor__text">г. Санкт-Петербург, Красносельский р-н, Петергофское шоссе,
+                          д.17, корп. 1</p>
+                      </div>
+                      <div class="constructor__block">
+                        <div class="constructor__item">
+                          <h5 class="text constructor__item-title">Выберите услугу:</h5>
+                          <div class="constructor__item-list"><label class="checkbox"><input class="checkbox__input"
+                                type="checkbox" name="checkbox-1" value="checkbox" />
                               <div class="checkbox__wrapper">
                                 <div class="checkbox__icon-wrapper"> <svg class="icon checkbox__icon">
                                     <use xlink:href="#checkbox"></use>
                                   </svg></div>
-                                <div class="checkbox__content"> <span class="text-md">Я соглашаюсь на обработку моих <a
-                                      href="policy.html" class="link link--gold">персональных данных</a></span></div>
+                                <div class="checkbox__content"> <span class="text">Интернет</span></div>
                               </div>
-                            </label></div><button class="button constructor__form-button" type="button"><span
-                              class="button__text">Оставить заявку</span><svg class="icon button__icon">
-                              <use xlink:href="#arrow-round--right"></use>
-                            </svg></button>
+                            </label><label class="checkbox"><input class="checkbox__input" type="checkbox"
+                                name="checkbox-1" value="checkbox" checked="checked" />
+                              <div class="checkbox__wrapper">
+                                <div class="checkbox__icon-wrapper"> <svg class="icon checkbox__icon">
+                                    <use xlink:href="#checkbox"></use>
+                                  </svg></div>
+                                <div class="checkbox__content"> <span class="text">Цифровое ТВ</span></div>
+                              </div>
+                            </label><label class="checkbox"><input class="checkbox__input" type="checkbox"
+                                name="checkbox-1" value="checkbox" checked="checked" />
+                              <div class="checkbox__wrapper">
+                                <div class="checkbox__icon-wrapper"> <svg class="icon checkbox__icon">
+                                    <use xlink:href="#checkbox"></use>
+                                  </svg></div>
+                                <div class="checkbox__content"> <span class="text">Телефония<button
+                                      class="tooltip-trigger" type="button" data-bs-toggle="tooltip"
+                                      data-bs-title="<span> Lorem </span> ipsum dolor sit amet, consectetur adipisicing elit."><svg
+                                        class="icon tooltip-trigger__icon">
+                                        <use xlink:href="#tooltip"></use>
+                                      </svg></button></span></div>
+                              </div>
+                            </label></div>
                         </div>
+                        <div class="constructor__item">
+                          <h5 class="text constructor__item-title">Скорость интернета:</h5>
+                          <div class="constructor__item-list"> <label class="badge"><input class="badge__input"
+                                type="radio" name="badge-1" value="badge" checked="checked" />
+                              <div class="badge__wrapper"> <span>Стартовый</span></div>
+                            </label><label class="badge"><input class="badge__input" type="radio" name="badge-1"
+                                value="badge" />
+                              <div class="badge__wrapper"> <span>100 Мбит/с</span></div>
+                            </label><label class="badge"><input class="badge__input" type="radio" name="badge-1"
+                                value="badge" />
+                              <div class="badge__wrapper"> <span>300 Мбит/с</span></div>
+                            </label><label class="badge"><input class="badge__input" type="radio" name="badge-1"
+                                value="badge" />
+                              <div class="badge__wrapper"> <span>555 Мбит/с</span></div>
+                            </label></div>
+                        </div>
+                        <div class="constructor__item">
+                          <div class="constructor__item-list"> <label class="checkbox"><input class="checkbox__input"
+                                type="checkbox" name="checkbox-2" value="checkbox" />
+                              <div class="checkbox__wrapper">
+                                <div class="checkbox__icon-wrapper"> <svg class="icon checkbox__icon">
+                                    <use xlink:href="#checkbox"></use>
+                                  </svg></div>
+                                <div class="checkbox__content"> <span class="text">Внешний IP-адрес</span></div>
+                              </div>
+                            </label></div>
+                        </div>
+                        <p class="text constructor__text">Возможно подключение на более высоких скоростях. Подробности
+                          уточняйте по телефону.</p>
                       </div>
-                      <div class="constructor__result"> <img class="constructor__result-img"
-                          src="assets\media\planet.svg" alt="" />
-                        <div class="constructor__result-content">
-                          <div class="constructor__result-item">
-                            <div class="constructor__result-title">Подключение:</div>
-                            <div class="constructor__result-label"> <span
-                                class="h2 constructor__result-strong">0</span><span
-                                class="text-sm constructor__result-text">рублей</span></div>
-                          </div>
-                          <div class="constructor__result-item">
-                            <div class="constructor__result-title">Стоимость в месяц:</div>
-                            <div class="constructor__result-label"> <span
-                                class="h2 constructor__result-strong">100</span><span
-                                class="text-sm constructor__result-text">рублей</span></div>
+                      <div class="constructor__block">
+                        <div class="constructor__item">
+                          <h5 class="text constructor__item-title">Условия оплаты:</h5>
+                          <div class="constructor__item-list"> <label class="radio"><input class="radio__input"
+                                type="radio" name="radio-1" value="radio" checked="checked" />
+                              <div class="radio__wrapper">
+                                <div class="radio__icon-wrapper">
+                                  <div class="radio__icon"></div>
+                                </div>
+                                <div class="radio__content"> <span class="text">У меня свой</span></div>
+                              </div>
+                            </label><label class="radio"><input class="radio__input" type="radio" name="radio-1"
+                                value="radio" />
+                              <div class="radio__wrapper">
+                                <div class="radio__icon-wrapper">
+                                  <div class="radio__icon"></div>
+                                </div>
+                                <div class="radio__content"> <span class="text">У меня свой</span></div>
+                              </div>
+                            </label></div>
+                        </div>
+                        <div class="constructor__item">
+                          <h5 class="text constructor__item-title">Роутер:</h5>
+                          <div class="constructor__item-list"> <label class="checkbox"><input class="checkbox__input"
+                                type="checkbox" name="checkbox-3" value="checkbox" />
+                              <div class="checkbox__wrapper">
+                                <div class="checkbox__icon-wrapper"> <svg class="icon checkbox__icon">
+                                    <use xlink:href="#checkbox"></use>
+                                  </svg></div>
+                                <div class="checkbox__content"> <span class="text">Купить<button class="tooltip-trigger"
+                                      type="button" data-bs-toggle="tooltip"
+                                      data-bs-title="<span> Lorem </span> ipsum dolor sit amet, consectetur adipisicing elit."><svg
+                                        class="icon tooltip-trigger__icon">
+                                        <use xlink:href="#tooltip"></use>
+                                      </svg></button></span></div>
+                              </div>
+                            </label><label class="checkbox"><input class="checkbox__input" type="checkbox"
+                                name="checkbox-3" value="checkbox" />
+                              <div class="checkbox__wrapper">
+                                <div class="checkbox__icon-wrapper"> <svg class="icon checkbox__icon">
+                                    <use xlink:href="#checkbox"></use>
+                                  </svg></div>
+                                <div class="checkbox__content"> <span class="text">У меня свой</span></div>
+                              </div>
+                            </label></div>
+                        </div>
+                        <p class="text constructor__text">*Стоимость роутера рассчитвается отдельно</p>
+                      </div>
+                      <div class="constructor__block">
+                        <div class="constructor__item">
+                          <h5 class="text constructor__item-title">ТВ:</h5>
+                          <div class="constructor__item-list"> <label class="badge badge--md"><input
+                                class="badge__input" type="radio" name="badge-2" value="badge" checked="checked" />
+                              <div class="badge__wrapper"> <span>MOOVI</span></div>
+                            </label><label class="badge badge--md"><input class="badge__input" type="radio"
+                                name="badge-2" value="badge" checked="checked" />
+                              <div class="badge__wrapper"> <span>Смотрёшка</span></div>
+                            </label>
+                            <div class="select"><select class="jsSelect" name="select-1">
+                                <option value="Лайт (150 руб)">Лайт (150 руб)</option>
+                                <option value="Лайт (250 руб)">Лайт (250 руб)</option>
+                                <option value="Лайт (150 руб)">Лайт (350 руб)</option>
+                              </select></div>
+                            <div class="select"><select class="jsSelect" name="select-2" multiple="multiple"
+                                placeholder="Выберите дополнительные пакеты">
+                                <option value="Мультирум для пакета Социальный. 1 доп. точка просмотра">Мультирум для
+                                  пакета Социальный. 1 доп. точка просмотра</option>
+                                <option value="Мультирум для пакета Социальный. 1 доп. точка просмотра">Мультирум для
+                                  пакета Социальный. 1 доп. точка просмотра</option>
+                                <option value="Мультирум для пакета Социальный. 1 доп. точка просмотра">Мультирум для
+                                  пакета Социальный. 1 доп. точка просмотра</option>
+                                <option value="Мультирум для пакета Социальный. 1 доп. точка просмотра">Мультирум для
+                                  пакета Социальный. 1 доп. точка просмотра</option>
+                                <option value="Мультирум для пакета Социальный. 1 доп. точка просмотра">Мультирум для
+                                  пакета Социальный. 1 доп. точка просмотра</option>
+                                <option value="Мультирум для пакета Социальный. 1 доп. точка просмотра">Мультирум для
+                                  пакета Социальный. 1 доп. точка просмотра</option>
+                                <option value="Мультирум для пакета Социальный. 1 доп. точка просмотра">Мультирум для
+                                  пакета Социальный. 1 доп. точка просмотра</option>
+                                <option value="Мультирум для пакета Социальный. 1 доп. точка просмотра">Мультирум для
+                                  пакета Социальный. 1 доп. точка просмотра</option>
+                                <option value="Мультирум для пакета Социальный. 1 доп. точка просмотра">Мультирум для
+                                  пакета Социальный. 1 доп. точка просмотра</option>
+                                <option value="Мультирум для пакета Социальный. 1 доп. точка просмотра">Мультирум для
+                                  пакета Социальный. 1 доп. точка просмотра</option>
+                                <option value="Мультирум для пакета Социальный. 1 доп. точка просмотра">Мультирум для
+                                  пакета Социальный. 1 доп. точка просмотра</option>
+                                <option value="Мультирум для пакета Социальный. 1 доп. точка просмотра">Мультирум для
+                                  пакета Социальный. 1 доп. точка просмотра</option>
+                                <option value="Мультирум для пакета Социальный. 1 доп. точка просмотра">Мультирум для
+                                  пакета Социальный. 1 доп. точка просмотра</option>
+                                <option value="Мультирум для пакета Социальный. 1 доп. точка просмотра">Мультирум для
+                                  пакета Социальный. 1 доп. точка просмотра</option>
+                                <option value="Мультирум для пакета Социальный. 1 доп. точка просмотра">Мультирум для
+                                  пакета Социальный. 1 доп. точка просмотра</option>
+                                <option value="Мультирум для пакета Социальный. 1 доп. точка просмотра">Мультирум для
+                                  пакета Социальный. 1 доп. точка просмотра</option>
+                                <option value="Мультирум для пакета Социальный. 1 доп. точка просмотра">Мультирум для
+                                  пакета Социальный. 1 доп. точка просмотра</option>
+                                <option value="Мультирум для пакета Социальный. 1 доп. точка просмотра">Мультирум для
+                                  пакета Социальный. 1 доп. точка просмотра</option>
+                                <option value="Мультирум для пакета Социальный. 1 доп. точка просмотра">Мультирум для
+                                  пакета Социальный. 1 доп. точка просмотра</option>
+                                <option value="Мультирум для пакета Социальный. 1 доп. точка просмотра">Мультирум для
+                                  пакета Социальный. 1 доп. точка просмотра</option>
+                                <option value="Мультирум для пакета Социальный. 1 доп. точка просмотра">Мультирум для
+                                  пакета Социальный. 1 доп. точка просмотра</option>
+                                <option value="Мультирум для пакета Социальный. 1 доп. точка просмотра">Мультирум для
+                                  пакета Социальный. 1 доп. точка просмотра</option>
+                                <option value="Мультирум для пакета Социальный. 1 доп. точка просмотра">Мультирум для
+                                  пакета Социальный. 1 доп. точка просмотра</option>
+                                <option value="Мультирум для пакета Социальный. 1 доп. точка просмотра">Мультирум для
+                                  пакета Социальный. 1 доп. точка просмотра</option>
+                                <option value="Мультирум для пакета Социальный. 1 доп. точка просмотра">Мультирум для
+                                  пакета Социальный. 1 доп. точка просмотра</option>
+                              </select></div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </form>
-                </div>
-              </div>
-              <div class="section-internet__tab-item jsTabItem">
-                <div class="section-internet__list">
-                  <div class="card-internet">
-                    <div class="card-internet__inner">
-                      <div class="card-internet__title-wrapper">
-                        <h3 class="h4 card-internet__title">Стартовый</h3>
+                    <div class="constructor__form">
+                      <div class="constructor__form-info">
+                        <h3 class="h4 constructor__form-title">Заявка на подключение:</h3>
+                        <p class="text constructor__form-subtitle">Заполните ваши контактные данные, и наш менеджер
+                          свяжется с вами в ближайшее время</p>
                       </div>
-                      <div class="card-internet__main">
-                        <div class="card-internet__advantages">
-                          <div class="card-internet__advantage"> <img src="assets\media\internet\advantage-1.svg"
-                              alt="" /><span class="text-md">Скорость 4-100 Мбит/с</span></div>
-                          <div class="card-internet__advantage"> <img src="assets\media\internet\advantage-2.svg"
-                              alt="" /><span class="text-md">Скорость с 1-8 часов 100 Мбит/с</span></div>
-                          <div class="card-internet__advantage"> <img src="assets\media\internet\advantage-3.svg"
-                              alt="" /><span class="text-md">Абонентская плата от 1500 руб/мес</span></div>
+                      <div class="constructor__form-content">
+                        <div class="constructor__form-row">
+                          <div class="input input--md"><input class="input__field jsInput" type="text" name="name"
+                              placeholder="Ваше имя" />
+                            <div class="input__error">Обязательно для заполнения</div>
+                          </div>
+                          <div class="input input--md"><input class="input__field jsInput" type="text" name="email"
+                              placeholder="E-mail*" />
+                            <div class="input__error">Обязательно для заполнения</div>
+                          </div>
+                          <div class="input input--md"><input class="input__field jsInput jsPhoneMask jsInputReq"
+                              type="text" name="phone" placeholder="+7(___) ___ - __ - __" />
+                            <div class="input__error">Обязательно для заполнения</div>
+                          </div>
+                          <div class="input input--md"><input class="input__field jsInput" type="text" name="home"
+                              placeholder="Квартира" />
+                            <div class="input__error">Обязательно для заполнения</div>
+                          </div>
                         </div>
-                        <div class="card-internet__info">
-                          <h4 class="text card-internet__subtitle">Стоимость подключения: 500 р.</h4>
-                          <p class="text card-internet__text">Для подключения в коммерческих помещениях, расположенных в
-                            жилых домах.</p>
-                          <h4 class="h4 card-internet__price">от 1500 р./ месяц</h4><button
-                            class="link card-internet__link" type="button" data-bs-toggle="modal"
-                            data-bs-target="#callback"><span>Подключить</span><svg class="icon">
-                              <use xlink:href="#arrow-round-yellow--right"></use>
-                            </svg></button>
+                        <div class="constructor__form-row"> <label class="checkbox checkbox--md"><input
+                              class="checkbox__input" type="checkbox" name="checkbox-4" value="checkbox" />
+                            <div class="checkbox__wrapper">
+                              <div class="checkbox__icon-wrapper"> <svg class="icon checkbox__icon">
+                                  <use xlink:href="#checkbox"></use>
+                                </svg></div>
+                              <div class="checkbox__content"> <span class="text-md">Я соглашаюсь на обработку моих <a
+                                    href="policy.html" class="link link--gold">персональных данных</a></span></div>
+                            </div>
+                          </label></div><button class="button constructor__form-button" type="button"><span
+                            class="button__text">Оставить заявку</span><svg class="icon button__icon">
+                            <use xlink:href="#arrow-round--right"></use>
+                          </svg></button>
+                      </div>
+                    </div>
+                    <div class="constructor__result"> <img class="constructor__result-img" src="assets\media\planet.svg"
+                        alt="" />
+                      <div class="constructor__result-content">
+                        <div class="constructor__result-item">
+                          <div class="constructor__result-title">Подключение:</div>
+                          <div class="constructor__result-label"> <span
+                              class="h2 constructor__result-strong">0</span><span
+                              class="text-sm constructor__result-text">рублей</span></div>
+                        </div>
+                        <div class="constructor__result-item">
+                          <div class="constructor__result-title">Стоимость в месяц:</div>
+                          <div class="constructor__result-label"> <span
+                              class="h2 constructor__result-strong">100</span><span
+                              class="text-sm constructor__result-text">рублей</span></div>
                         </div>
                       </div>
-                    </div><img class="card-internet__img" src="assets\media\planet.svg" alt="" />
+                    </div>
                   </div>
-                  <div class="card-internet">
-                    <div class="card-internet__inner">
-                      <div class="card-internet__title-wrapper">
-                        <h3 class="h4 card-internet__title">Базовый</h3>
-                      </div>
-                      <div class="card-internet__main">
-                        <div class="card-internet__advantages">
-                          <div class="card-internet__advantage"> <img src="assets\media\internet\advantage-1.svg"
-                              alt="" /><span class="text-md">Скорость 10-100 Мбит/с</span></div>
-                          <div class="card-internet__advantage"> <img src="assets\media\internet\advantage-2.svg"
-                              alt="" /><span class="text-md">Скорость с 1-8 часов 100 Мбит/с</span></div>
-                          <div class="card-internet__advantage"> <img src="assets\media\internet\advantage-3.svg"
-                              alt="" /><span class="text-md">Абонентская плата от 3500 руб/мес</span></div>
-                        </div>
-                        <div class="card-internet__info">
-                          <h4 class="text card-internet__subtitle">Стоимость подключения: 500 р.</h4>
-                          <p class="text card-internet__text">Для подключения в коммерческих помещениях, расположенных в
-                            жилых домах.</p>
-                          <h4 class="h4 card-internet__price">от 3500 р./ месяц</h4><button
-                            class="link card-internet__link" type="button" data-bs-toggle="modal"
-                            data-bs-target="#callback"><span>Подключить</span><svg class="icon">
-                              <use xlink:href="#arrow-round-yellow--right"></use>
-                            </svg></button>
-                        </div>
-                      </div>
-                    </div><img class="card-internet__img" src="assets\media\planet.svg" alt="" />
-                  </div>
-                  <div class="card-internet">
-                    <div class="card-internet__inner">
-                      <div class="card-internet__title-wrapper">
-                        <h3 class="h4 card-internet__title">Полный</h3>
-                      </div>
-                      <div class="card-internet__main">
-                        <div class="card-internet__advantages">
-                          <div class="card-internet__advantage"> <img src="assets\media\internet\advantage-1.svg"
-                              alt="" /><span class="text-md">Скорость 20-100 Мбит/с</span></div>
-                          <div class="card-internet__advantage"> <img src="assets\media\internet\advantage-2.svg"
-                              alt="" /><span class="text-md">Скорость с 1-8 часов 100 Мбит/с</span></div>
-                          <div class="card-internet__advantage"> <img src="assets\media\internet\advantage-3.svg"
-                              alt="" /><span class="text-md">Абонентская плата от 6000 руб/мес</span></div>
-                        </div>
-                        <div class="card-internet__info">
-                          <h4 class="text card-internet__subtitle">Стоимость подключения: 500 р.</h4>
-                          <p class="text card-internet__text">Для подключения в коммерческих помещениях, расположенных в
-                            жилых домах.</p>
-                          <h4 class="h4 card-internet__price">от 1500 р./ месяц</h4><button
-                            class="link card-internet__link" type="button" data-bs-toggle="modal"
-                            data-bs-target="#callback"><span>Подключить</span><svg class="icon">
-                              <use xlink:href="#arrow-round-yellow--right"></use>
-                            </svg></button>
-                        </div>
-                      </div>
-                    </div><img class="card-internet__img" src="assets\media\planet.svg" alt="" />
-                  </div>
-                  <div class="card-internet">
-                    <div class="card-internet__inner">
-                      <div class="card-internet__title-wrapper">
-                        <h3 class="h4 card-internet__title">Индивидуальный</h3>
-                      </div>
-                      <div class="card-internet__main">
-                        <div class="card-internet__info">
-                          <h4 class="text card-internet__subtitle">Телефон отдела продаж: <span>+7 (812)
-                              458-58-68</span></h4>
-                          <p class="text card-internet__text">Специально для Вас мы подберем индивидуальный тариф,
-                            соответствующий всем Вашим требованиям.</p>
-                          <h4 class="h4 card-internet__price">от 1 р./ месяц</h4><button
-                            class="link card-internet__link" type="button" data-bs-toggle="modal"
-                            data-bs-target="#callback"><span>Подключить</span><svg class="icon">
-                              <use xlink:href="#arrow-round-yellow--right"></use>
-                            </svg></button>
-                        </div>
-                      </div>
-                    </div><img class="card-internet__img" src="assets\media\planet.svg" alt="" />
-                  </div>
-                </div>
+                </form>
               </div>
             </div>
           </div>
@@ -495,12 +376,10 @@
               alt="" /></a>
           <div class="footer__nav">
             <nav class="nav">
-              <div class="nav__chapter">
-                <h2 class="nav__title">МЕНЮ</h2><a class="nav__item" href="#">Для себя</a><a class="nav__item"
-                  href="#">Для бизнеса</a><a class="nav__item" href="articles.html">Новости</a><a class="nav__item"
+              <div class="nav__chapter"><a class="nav__item" href="#">Для себя</a><a class="nav__item" href="#">Для
+                  бизнеса</a><a class="nav__item" href="articles.html">Новости</a><a class="nav__item"
                   href="actions.html">Акции</a><a class="nav__item" href="#">О нас</a><a class="nav__item"
-                  href="сcontacts.html">Контакты</a>
-              </div>
+                  href="сcontacts.html">Контакты</a></div>
               <div class="nav__chapter">
                 <h2 class="nav__title">Услуги</h2><a class="nav__item" href="internet.html">Интернет</a><a
                   class="nav__item" href="television.html">Телевидение</a><a class="nav__item"
@@ -546,7 +425,7 @@
                     <div class="modal__form-row">
                       <div class="modal__form-col">
                         <div class="input input--md"><input class="input__field jsInput jsInputReq" type="text"
-                            name="input-1" placeholder="Ваше имя" autofocus="autofocus" />
+                            name="input-1" placeholder="Ваше имя" />
                           <div class="input__error">Обязательно для заполнения</div>
                         </div>
                       </div>
